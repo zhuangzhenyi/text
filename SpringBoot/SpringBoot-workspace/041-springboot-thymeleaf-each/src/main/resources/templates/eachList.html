@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>循环遍历List集合</title>
+</head>
+<body>
+<div th:each="user,userStat:${userList}"><!--userStat可以省略-->
+    <span th:text="${userStat.count}"></span>
+    <span th:text="${userStat.first}"></span>
+    <span th:Text="${user.id}"></span>
+    <span th:Text="${user.username}"></span>
+    <span th:Text="${user.phone}"></span>
+    <span th:Text="${user.address}"></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+http://localhost:8080/springboot/user/detail?id=1
+-->
+<script type="text/javascript" th:inline="javascript">
+    var scheme = [[${#request.getScheme}]];// http
+    var serverName = [[${#request.getServerName}]]// localhost
+    var serverPort = [[${#request.getServerPort}]]// 8080
+    var contextPath = [[${#request.getContextPath}]]// springboot
+    var requestURL = [[${#request.getRequestURL}]]// http://localhost:8080/springboot/index
+    var queryString = [[${#request.getQueryString}]]// 获取请求参数
+    // alert(requestURL+"?"+queryString);http://localhost:8080/springboot/index?id=1&username=aaa
+</script>
+<div th:text="${#session.getAttribute('user').id}"></div><!--获取id-->
+<div th:text="${session.user.id}"></div><!--获取id-->
+
+<div th:text="${curTime}"></div>
+<div th:text="${#dates.format(curTime,'yyyy-MM-dd HH:mm:ss SSS')}"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+</head>
+<body>
+<!--
+三元运算 ：表达式?” 正确结果”:” 错误结果”
+算术运算： ：+ , - , * , / , %
+关系比较: ：> , < , >= , <= ( gt , lt , ge , le )
+相等判断： ：== , != ( eq , ne )
+-->
+
+<div th:text="${sex == 1?'男':'女'}"></div>
+<div th:text="${sex eq 1?'男':'女'}"></div>
+
+<div th:text="${sex != 1?'男':'女'}"></div>
+<div th:text="${sex ne 1?'男':'女'}"></div>
+
+20+5=<span th:text="20+5"></span><br/>
+20-5=<span th:text="20-5"></span><br/>
+20*5=<span th:text="20*5"></span><br/>
+20/5=<span th:text="20/5"></span><br/>
+20%5=<span th:text="20%5"></span><br/>
+
+20>5 -><span th:text="20>5"></span><br/>
+20>=5 -><span th:text="20>=5"></span><br/>
+20<5 -><span th:text="20<5"></span><br/>
+20<=5 -><span th:text="20<=5"></span><br/>
+
+20gt5 -><span th:text="20 gt 5"></span><br/>
+20ge5 -><span th:text="20 ge 5"></span><br/>
+20lt5 -><span th:text="20 lt 5"></span><br/>
+20le5 -><span th:text="20 le 5"></span><br/>
+</body>
+</html>
