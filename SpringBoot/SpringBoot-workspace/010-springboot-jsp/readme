@@ -1,0 +1,4 @@
+SpringBoot集成jsp思路：
+1、创建一个webapp来存放jsp页面
+2、添加SpringBoot工程内嵌Tomcat对jsp解析的一个依赖
+3、SpringBoot工程指定了jsp文件编译的路径META-INF/resources

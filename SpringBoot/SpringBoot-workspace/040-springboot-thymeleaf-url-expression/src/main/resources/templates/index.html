@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>URL路径表达式</title>
+</head>
+<body>
+<h1>URL路径表达式的语法：@{...}</h1>
+
+<h2>绝对路径（网络）,没有参数</h2>
+<a href="http://www.baidu.com">传统：百度</a><br/>
+<a th:href="@{http://www.baidu.com}">使用路径表达式:百度</a>
+
+<h2>内部系统的绝对路径（没有参数）</h2>
+<a href="http://localhost:8080/index1">传统方式：index1</a><br/>
+<a th:href="@{http://localhost:8080/index1}">使用路径表达式：index1</a>
+
+<h2>内部系统的绝对路径（有参数：固定的）</h2>
+<a href="http://localhost:8080/index2?id=1001">传统方式：内部系统的绝对路径（有参数，固定）</a><br/>
+<a th:href="@{http://localhost:8080/index2id=1002}">使用路径表达式：内部系统的绝对路径（有参数，固定）</a>
+
+<h2>内部系统的绝对路径（有参数：后台获取）</h2>
+<a href="">传统方式:无法获取后台的数据</a>
+<a th:href="@{'http://localhost:8080/index2?id=' +${id}}">使用路径表达式：内部系统的绝对路径（有参数：后台获取）</a>
+
+<h2>相对路径（没有参数）</h2>
+<a href="/index1">传统写法：index1</a>
+<a th:href="@{/index1}">使用路径表达式，相对路径（没有参数）</a>
+
+<h2 >相对路径（有1个参数：固定）</h2>
+<a th:href="@{/index2?id=666}">使用路径表达式：相对路径（有1个参数）</a>
+
+<h2>相对路径（有一个参数：后台获取）</h2>
+<a th:href="@{'/index2?id='+${id}}">使用路径表达式：相对路径（有一个参数：后台获取）</a>
+
+<h2>相对路径（有多个参数：后台获取）</h2>
+<a th:href="@{'/index3?id='+${id}+'&age='+${age}}">使用路径表达式：相对路径（有多个参数：后台获取）</a>
+
+<h2>推荐使用的相对路径写法</h2>
+<a th:href="@{/index3(id=${id},age=${age})}">使用路径表达式：相对路径（有多个参数：后台获取）</a>
+
+</body>
+</html>

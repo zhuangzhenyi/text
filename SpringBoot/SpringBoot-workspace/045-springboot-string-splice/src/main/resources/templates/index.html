@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串的拼接</title>
+</head>
+<body th:inline="text">
+<div>共125条13页 当前第5页 首页 上一页 下一页 尾页</div>
+<br/>
+<div>共<span th:text="${totalRows}"> 125</span>条<span th:text="${totalPage}">13</span>页 当前第<span th:text="${currentPage}"></span>页 首页 上一页 下一页 尾页</div>
+<br/>
+<div>共[[${totalRows}]]条[[${totalPage}]]页 当前第[[${currentPage}]]页 首页 上一页 下一页 尾页</div>
+<br/>
+<!--推荐使用的优雅的方式来拼接字符串-->
+<div th:text="|共${totalRows}条${totalPage}页 当前第${currentPage}页 首页 上一页 下一页 尾页|">共125条13页 当前第5页 首页 上一页 下一页 尾页</div>
+</body>
+</html>

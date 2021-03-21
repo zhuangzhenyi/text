@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" th:action="@{/form}">
+    编号：<input type="text" th:id="id" th:name="id" th:value="${id}"><br/>
+    姓名：<input type="text" id="username" name="username"/><br/>
+<!--    <input type="submit" value="提交">-->
+</form>
+<script type="text/javascript">
+    function myForm() {
+        alert("----")
+    }
+</script>
+<button id="myFormSubmit" th:onclick="myForm()">提交</button>
+</body>
+</html>
