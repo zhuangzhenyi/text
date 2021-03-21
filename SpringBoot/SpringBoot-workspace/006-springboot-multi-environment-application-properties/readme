@@ -1,4 +1,0 @@
-子环境核心配置文件的名称是以：application-xxx.properties
-主核心配置文件只能有一个：application.properties
-
-在主核心配置文件中指定一个配置文件生效，通过spring.profiles.active=xxx名称

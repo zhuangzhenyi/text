@@ -1,4 +1,0 @@
-SpringBoot框架集成MyBatis思路：
-1、添加依赖（MyBatis、连接数据库的驱动）
-2、连接数据库的配置
-3、MyBatis逆向工程生成：数据持久层和实体Bean
